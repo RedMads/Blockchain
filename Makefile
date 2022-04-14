@@ -1,12 +1,14 @@
+OUTFILES=$(shell find ./src -name '*.cpp')
+
 main:
 
-	g++ main.cpp src/*.cpp -o out/main.o
-	./main.o
+	g++ main.cpp $(OUTFILES) -o out/main.o
+	./out/main.o
 
 test:
 
-	g++ test.cpp src/*.cpp -o out/test.o
-	./test.o
+	g++ test.cpp $(OUTFILES) -o out/test.o
+	./out/test.o
 
 remove:
 

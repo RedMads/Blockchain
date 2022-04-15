@@ -4,9 +4,9 @@
 Blockchain::Blockchain() {
 
     // create genesis Block
-    Block genesisBlock("0", "Fuck all social platforms", time(0));
+    Block genesisBlock("2022411270d24869205361746f7368692c20796f752772652047524541542021", "F*ck all social media platforms", 1650048219);
 
-    // shrink to chain
+    // shrink the chain
     chain.shrink_to_fit();
 
     // mine the genesis block
@@ -21,7 +21,7 @@ void Blockchain::addBlock(Block block) {
     block.mineBlock(difficulty);
 
     // set index of block
-    block.setIndex(getChainLength() - 1);
+    block.setIndex(getChainLength());
 
     // check if hash of block is vaild or not
     if(block.isHashVaild())
@@ -39,13 +39,16 @@ void Blockchain::printChain() {
     for(i = chain.begin(); i != chain.end(); i++) {
 
         Block currentBlock = *i;
+        time_t time = currentBlock.getTimestamp();
 
+        std::cout << "--------------------------------------\n";
         std::cout << "Index: " << currentBlock.getIndex() << "\n";
         std::cout << "Hash: " << currentBlock.getHash() << "\n";
         std::cout << "PrevHash: " << currentBlock.getPrevHash() << "\n";
+        std::cout << "Data: " << currentBlock.getData() << "\n";
         std::cout << "Nonce: " << currentBlock.getNonce() << "\n";
-        std::cout << "Timestamp: " << currentBlock.getTimestamp() << "\n";
-
+        std::cout << "Timestamp: " << time << " | " << ctime(&time) << "\n";
+        std::cout << "--------------------------------------\n";
     }
 
 }
@@ -55,3 +58,5 @@ void Blockchain::printChain() {
 std::vector<Block> Blockchain::getChain() { return chain;}
 
 int Blockchain::getChainLength() { return chain.size();}
+
+Block Blockchain::getLatestBlock() { return chain[chain.size() - 1];}

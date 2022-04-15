@@ -84,6 +84,8 @@ time_t Block::getTimestamp() { return timestamp;}
 
 std::string Block::getPrevHash() { return prevHash;}
 
+std::string Block::getData() { return data;}
+
 // body of setters functions !
 void Block::setIndex(unsigned int Index) { index = Index;}
 

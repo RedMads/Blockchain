@@ -37,6 +37,8 @@ public:
     
     std::string getPrevHash(); // function gets a previous hash of block
 
+    std::string getData(); // function gets a data of Block
+
     time_t getTimestamp(); // function retruns a Timestamp
 
 

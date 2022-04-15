@@ -19,7 +19,7 @@ private:
     // this variable stores
     // how many zeros in front of hash
     // ( DIFFICULTY LEVEL )
-    const unsigned int difficulty = 4;
+    const unsigned int difficulty = 5;
 
 
 public:

@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <ctime>
+#include <string>
+
+#include "../libs/sha256/sha256.h"
 
 struct Block {
     
@@ -11,7 +14,7 @@ struct Block {
 private:
 
     unsigned int index = 0; // number of block
-    int32_t nonce; // number of trys ( to get right hash )
+    int32_t nonce = 0; // number of trys ( to get right hash )
     std::string hash; // the hash of block
     std::string prevHash; // previous hash
     std::string data = ""; // actual data
@@ -21,8 +24,7 @@ private:
 public:
 
     // Block constructr to parse info !
-    Block(unsigned int Index, int32_t Nonce, std::string Hash,
-        std::string PrevHash, std::string Data, time_t Timestamp);
+    Block(std::string PrevHash, std::string Data, time_t Timestamp);
 
     
     // getters //
@@ -38,6 +40,31 @@ public:
     time_t getTimestamp(); // function retruns a Timestamp
 
 
+    // setters //
+
+    void setNonce(int32_t Nonce);
+    void setIndex(unsigned int Index);
+
+
+    // main functions //
+
+    // check if the hash is vaild
+    // by checking the difficulty rules
+    bool isHashMined(std::string hash, unsigned int difficulty);
+
+
+    // this function will check
+    // if the hash of a block is same to
+    // the new calculated hash or not
+    bool isHashVaild();
+
+
+    // the mining function
+    // make sure that is block
+    // hard to mine !
+    std::string mineBlock(unsigned int difficulty);
+
+    std::string generateHash();
 
 };
 

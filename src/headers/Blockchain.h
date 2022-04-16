@@ -32,7 +32,7 @@ public:
     // check if the entire chain is vaild
     // this function will use the previous function
     // ( isHashVaild ) 
-    bool isChainVaild(std::vector<Block>);
+    bool isChainVaild();
 
     // function loops over the chain
     // and print it out

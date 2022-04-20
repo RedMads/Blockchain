@@ -70,6 +70,24 @@ std::string Block::mineBlock(unsigned int difficulty) {
 }
 
 
+void Block::printBlockData() {
+
+    // output 40 of - 
+    std::cout << std::string(40, '-') + "\n";
+
+    std::cout << "Index: " << index << "\n";
+    std::cout << "Hash: " << hash << "\n";
+    std::cout << "PrevHash: " << prevHash << "\n";
+    std::cout << "Data: " << data << "\n";
+    std::cout << "Nonce: " << nonce << "\n";
+
+    // output time in Unix timestamp and format it to be readable to humans
+    std::cout << "Timestamp: " << timestamp << " | " << ctime(&timestamp) << "\n";
+    std::cout << std::string(40, '-') + "\n";
+
+}
+
+
 bool Block::isHashVaild(){ return generateHash() == hash;}
 
 

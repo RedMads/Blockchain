@@ -66,7 +66,11 @@ public:
     // hard to mine !
     std::string mineBlock(unsigned int difficulty);
 
+    // function generates hash for Block !
     std::string generateHash();
+
+    // function prints signle block data
+    void printBlockData();
 
 };
 

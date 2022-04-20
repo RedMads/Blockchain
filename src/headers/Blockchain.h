@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "Block.h"
 
@@ -48,6 +49,10 @@ public:
 
     // a useful function thats return last block
     Block getLatestBlock();
+
+    // function to get last block hash
+    std::string getLastBlockHash();
+
 
 };
 

@@ -32,5 +32,7 @@ int main() {
 
     blockchainObj.printChain();
 
+    std::cout << "is Chain Vaild: " << blockchainObj.isChainVaild() << std::endl;
+
     return 0;
 }

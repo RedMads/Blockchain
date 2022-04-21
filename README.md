@@ -6,7 +6,7 @@ Basic blockchain implementation with proof-of-work and chain vaildation
 
 ## install & build (Linux)
 ```
-git clone https://github.com/RedMad/Blockchain.git
+git clone https://github.com/RedMads/Blockchain.git
 
 cd Blockchain/
 

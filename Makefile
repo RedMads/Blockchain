@@ -1,7 +1,8 @@
 OUTFILES=$(shell find ./src -name '*.cpp')
 
 main:
-
+	
+	mkdir -p out 
 	g++ main.cpp $(OUTFILES) -o out/main.o
 	
 

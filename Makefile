@@ -8,6 +8,7 @@ main:
 
 test:
 
+	mkdir -p out 
 	g++ test.cpp $(OUTFILES) -o out/test.o
 
 	
